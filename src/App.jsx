@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import "./App.css";
+import EntryModal from "./components/EntryModal";
+import SplashScreen from "./components/SplashScreen";
+import EntryContextProvider from "./context/EntryContext";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-
-    </>
-  )
+    <EntryContextProvider>
+      <div className="App bg-[url(/assets/browser-image/old-oak-wood.jpg)]">
+      <SplashScreen />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/entry/:id" element={<EntryModal />} />
+        </Routes>
+      </div>
+    </EntryContextProvider>
+  );
 }
 
-export default App
+export default App;
