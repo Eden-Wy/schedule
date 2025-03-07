@@ -2,11 +2,11 @@ import React from "react";
 import { EntryContext } from "../context/EntryContext";
 import { useContext } from "react";
 
-function EntryForm() {
+function LogIn() {
   const { entry, setEntry, handleSubmit } = useContext(EntryContext);
   return (
-    <div className="entry-form-container w-[50%]">
-      <h1 className="entry-form-title m-[3rem] text-2xl text-center text-amber-500">ACCESS CATALOGUE</h1>
+    <div className="p-3 my-5 d-flex flex-column w-50">
+      <h1 className="m-[3rem] text-2xl text-center text-amber-500">WELCOME TO YOUR PERSONAL SCHEDULER. Please log in to continue.</h1>
       <form
         onSubmit={handleSubmit}
         className="entry-form w-[100%] flex flex-col gap-4 "
@@ -14,22 +14,16 @@ function EntryForm() {
         <input
           className="p-2 border border-xl border-amber-300"
           type="text"
-          placeholder="Title"
+          placeholder="Enter your e-mail"
           value={entry.title}
           onChange={(e) => setEntry({ ...entry, title: e.target.value })}
         />
         <textarea
           className="p-2 border border-xl border-amber-300"
-          placeholder="Content"
+          placeholder="Enter your password"
           value={entry.content}
           onChange={(e) => setEntry({ ...entry, content: e.target.value })}
         ></textarea>
-        <input
-          className="p-2 border border-xl border-amber-300"
-          type="date"
-          value={entry.date}
-          onChange={(e) => setEntry({ ...entry, date: e.target.value })}
-        />
         <input
           className="p-2 text-white border border-xl border-amber-300"
           type="file"
@@ -53,4 +47,4 @@ function EntryForm() {
   );
 }
 
-export default EntryForm;
+export default LogIn;
