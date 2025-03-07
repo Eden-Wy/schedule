@@ -1,17 +1,18 @@
 import React from "react";
-import EntryForm from "../components/EntryForm";
-import EntryList from "../components/EntryList";
 import { EntryContext } from "../context/EntryContext";
 import { useContext } from "react";
-import EntryModal from "../components/EntryModal";
+import Card from "./Card";
 
 function Home() {
-  const { isModalOpen } = useContext(EntryContext);
+  const { entries, entry } = useContext(EntryContext);
+
   return (
-    <div className="home w-full min-h-[100vh] flex flex-col items-center gap-[10rem]">
-      <EntryForm />
-      <EntryList />
-      {isModalOpen && <EntryModal />}
+    <div>
+      <div className="entry-list flex flex-wrap justify-center gap-4">
+        {entries.map((entry) => (
+          <Card key={entry.id} entry={entry} />
+        ))}
+      </div>
     </div>
   );
 }

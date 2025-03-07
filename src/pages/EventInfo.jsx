@@ -3,7 +3,7 @@ import { EntryContext } from "../context/EntryContext";
 import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-function EntryModal() {
+function EventInfo() {
   const { entries } = useContext(EntryContext);
   const { id } = useParams();
   const navigate = useNavigate();
@@ -37,4 +37,4 @@ function EntryModal() {
   );
 }
 
-export default EntryModal;
+export default EventInfo;

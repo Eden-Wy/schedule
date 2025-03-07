@@ -2,7 +2,7 @@ import React from "react";
 import { EntryContext } from "../context/EntryContext";
 import { useContext } from "react";
 
-function EntryItem({ entry }) {
+function Card({ entry }) {
   const { handleModal, handleDelete } = useContext(EntryContext);
 
   return (
@@ -37,4 +37,4 @@ function EntryItem({ entry }) {
   );
 }
 
-export default EntryItem;
+export default Card;

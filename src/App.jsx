@@ -1,8 +1,8 @@
 import "./App.css";
-import EntryModal from "./components/EntryModal";
+import EventInfo from "./pages/EventInfo";
 import SplashScreen from "./components/SplashScreen";
 import EntryContextProvider from "./context/EntryContext";
-import Home from "./pages/Home";
+import HomeOld from "./pages/HomeOld";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -11,8 +11,8 @@ function App() {
       <div className="App bg-[url(/assets/browser-image/old-oak-wood.jpg)]">
       <SplashScreen />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/entry/:id" element={<EntryModal />} />
+          <Route path="/" element={<HomeOld />} />
+          <Route path="/entry/:id" element={<EventInfo />} />
         </Routes>
       </div>
     </EntryContextProvider>
