@@ -1,21 +1,28 @@
-// import EventInfo from "./pages/EventInfo";
-// // import SplashScreen from "./components/SplashScreen";
-// import EntryContextProvider from "./context/EntryContext";
-// import HomeOld from "./pages/HomeOld";
-// import { Routes, Route } from "react-router-dom";
-
+import "./index.css";
+import EventInfo from "./pages/EventInfo";
+import EventContextProvider from "./context/EventContext";
+import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import Navigation from "./components/Navigation";
+import EventForm from "./pages/CreateEvent";
 
-function App() {
+
+  function App() {
     return (
-        <div>
-            <Login />
-            <SignUp />
-        </div>
+      <div>
+      <Navigation />
+          <EventContextProvider>
+            <div>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/event/:id" element={<EventInfo />} />
+                <Route path="/new" element={<EventForm />} />
+              </Routes>
+            </div>
+          </EventContextProvider>
+      </div>
     );
-}
+  }
 
 export default App;
 
