@@ -2,7 +2,7 @@ import React from "react";
 import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
 
-function Card({ event }) {
+function Event({ event }) {
   const { handleModal, handleDelete } = useContext(EventContext);
 
   return (

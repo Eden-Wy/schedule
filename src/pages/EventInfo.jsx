@@ -1,6 +1,5 @@
 import React from "react";
 import { EventContext } from "../context/EventContext";
-import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -16,12 +15,10 @@ function EventInfo() {
   return (
     <div
       className="event-modal w-full h-full fixed top-0 left-0 bg-black bg-opacity-20 flex justify-center items-center"
-      className="event-modal w-full h-full fixed top-0 left-0 bg-black bg-opacity-20 flex justify-center items-center"
       onClick={() => navigate("/")}
     >
       <img src="" alt="" />
       <div
-        className="event-modal-content absolute w-[50%] min-h-[30%] bg-white p-4"
         className="event-modal-content absolute w-[50%] min-h-[30%] bg-white p-4"
         onClick={(e) => e.stopPropagation()}
       >
