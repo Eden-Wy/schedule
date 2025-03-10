@@ -44,9 +44,15 @@ const EventContextProvider = ({ children }) => {
   return (
     <EventContext.Provider
       value={{
+<<<<<<< HEAD
         events,
         event,
         setEvent,
+=======
+        events: events,
+        event: event,
+        setEvent: setEvent,
+>>>>>>> 0c0219b2087202f7b4bc0a779d624647779c2812
         handleSubmit,
         handleDelete,
         handleModal,
