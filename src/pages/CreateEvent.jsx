@@ -1,9 +1,9 @@
 import React from "react";
-import { EntryContext } from "../context/EntryContext";
+import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
 
-function EntryForm() {
-  const { entry, setEntry, handleSubmit } = useContext(EntryContext);
+function EventForm() {
+  const { event, setEvent, handleSubmit } = useContext(EventContext);
   return (
     <div className="entry-form-container w-[50%]">
       <h1 className="entry-form-title m-[3rem] text-2xl text-center text-amber-500">ACCESS CATALOGUE</h1>
@@ -15,28 +15,28 @@ function EntryForm() {
           className="p-2 border border-xl border-amber-300"
           type="text"
           placeholder="Title"
-          value={entry.title}
-          onChange={(e) => setEntry({ ...entry, title: e.target.value })}
+          value={event.title}
+          onChange={(e) => setEvent({ ...event, title: e.target.value })}
         />
         <textarea
           className="p-2 border border-xl border-amber-300"
           placeholder="Content"
-          value={entry.content}
-          onChange={(e) => setEntry({ ...entry, content: e.target.value })}
+          value={event.content}
+          onChange={(e) => setEvent({ ...event, content: e.target.value })}
         ></textarea>
         <input
           className="p-2 border border-xl border-amber-300"
           type="date"
-          value={entry.date}
-          onChange={(e) => setEntry({ ...entry, date: e.target.value })}
+          value={event.date}
+          onChange={(e) => setEvent({ ...event, date: e.target.value })}
         />
         <input
           className="p-2 text-white border border-xl border-amber-300"
           type="file"
           onChange={(e) => {
             if (e.target.files.length > 0) {
-              setEntry({
-                ...entry,
+              setEvent({
+                ...event,
                 image: URL.createObjectURL(e.target.files[0]),
               });
             }
@@ -53,4 +53,4 @@ function EntryForm() {
   );
 }
 
-export default EntryForm;
+export default EventForm;
