@@ -1,17 +1,21 @@
 import React from "react";
-import { EntryContext } from "../context/EntryContext";
+import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
-import Card from "./Card";
+import Event from "../components/Card";
+import EventForm from "./CreateEvent";
 
 function Home() {
-  const { entries, entry } = useContext(EntryContext);
+  const { events, event } = useContext(EventContext);
 
   return (
     <div>
-      <div className="entry-list flex flex-wrap justify-center gap-4">
-        {entries.map((entry) => (
-          <Card key={entry.id} entry={entry} />
+      <div className="event-list flex flex-wrap justify-center gap-4">
+        {events.map((event) => (
+          <Event key={event.id} event={event} />
         ))}
+      </div>
+      <div>
+      <EventForm />
       </div>
     </div>
   );

@@ -1,21 +1,21 @@
-import "./App.css";
+import "./index.css";
 import EventInfo from "./pages/EventInfo";
-import SplashScreen from "./components/SplashScreen";
-import EntryContextProvider from "./context/EntryContext";
-import HomeOld from "./pages/HomeOld";
+{/*import SplashScreen from "./components/SplashScreen";*/}
+import EventContextProvider from "./context/EventContext";
+import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <EntryContextProvider>
+    <EventContextProvider>
       <div className="App bg-[url(/assets/browser-image/old-oak-wood.jpg)]">
-      <SplashScreen />
+        {/*<SplashScreen />*/}
         <Routes>
-          <Route path="/" element={<HomeOld />} />
-          <Route path="/entry/:id" element={<EventInfo />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/event/:id" element={<EventInfo />} />
         </Routes>
       </div>
-    </EntryContextProvider>
+    </EventContextProvider>
   );
 }
 

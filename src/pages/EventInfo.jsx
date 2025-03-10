@@ -1,25 +1,25 @@
 import React from "react";
-import { EntryContext } from "../context/EntryContext";
+import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 function EventInfo() {
-  const { entries } = useContext(EntryContext);
+  const { events } = useContext(EventContext);
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const entry = entries.find((e) => e.id === Number(id));
+  const event = events.find((e) => e.id === Number(id));
 
-  if (!entry) return <p>Entry not found</p>;
+  if (!Event) return <p>Event not found</p>;
 
   return (
     <div
-      className="entry-modal w-full h-full fixed top-0 left-0 bg-black bg-opacity-20 flex justify-center items-center"
+      className="event-modal w-full h-full fixed top-0 left-0 bg-black bg-opacity-20 flex justify-center items-center"
       onClick={() => navigate("/")}
     >
       <img src="" alt="" />
       <div
-        className="entry-modal-content absolute w-[50%] min-h-[30%] bg-white p-4"
+        className="event-modal-content absolute w-[50%] min-h-[30%] bg-white p-4"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -28,10 +28,10 @@ function EventInfo() {
         >
           Close
         </button>
-        <h2>{entry.title}</h2>
-        <p>{entry.content}</p>
-        <p>{entry.date}</p>
-        <img src={entry.image} alt={entry.title} className="w-[80%]" />
+        <h2>{event.title}</h2>
+        <p>{event.content}</p>
+        <p>{event.date}</p>
+        <img src={event.image} alt={event.title} className="w-[80%]" />
       </div>
     </div>
   );
