@@ -1,9 +1,15 @@
 import React from "react";
 import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card({ event }) {
   const { handleModal, handleDelete } = useContext(EventContext);
+  const navigate = useNavigate();
+  const redirectToEventPage = (id) => {
+    navigate(`event/${id}`)
+  };
+
 
   return (
     <div className="flex justify-between">
@@ -21,7 +27,7 @@ function Card({ event }) {
         <div className="entry-item-footer flex items-center gap-4">
           <button
             className="border border-xl border-amber-300 rounded px-5 py-[.5rem]"
-            onClick={() => handleModal(event.id)}
+            onClick={() => redirectToEventPage(event.id)}
           >
             Open Details
           </button>

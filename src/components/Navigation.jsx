@@ -21,8 +21,9 @@ function Navigation() {
                 Create Event
                 </NavLink></li>
                 <li className="button m-2 py-1 px-3 bg-[#D891D2] shadow-lg rounded-lg tracking-wide uppercase">
+                <NavLink to="/logout" style={({isActive}) => isActive ? {color: "#471660"} : {color: "white"}}>
                 Log Out
-                </li>
+                </NavLink></li>
             </ul>
             <h1 className="text-7xl mt-2 text-[#471660] text-center ">
             Event Scheduler</h1>
