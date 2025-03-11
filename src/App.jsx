@@ -1,26 +1,36 @@
 import "./index.css";
-import EventInfo from "./pages/EventInfo";
-import EventContextProvider from "./context/EventContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout.jsx";
 import Home from "./pages/Home";
-import { Routes, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import LogOut from "./components/LogOut";
+import EventInfo from "./pages/EventInfo";
 import EventForm from "./pages/CreateEvent";
-
+import SecureLayout from "./layout/SecureLayout";
+import { AuthProvider } from "./context/AuthContext";
+import { EventContextProvider } from "./context/EventContext";
 
   function App() {
     return (
-      <div>
-      <Navigation />
+      <Router>
+        <AuthProvider>
           <EventContextProvider>
-            <div>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/event/:id" element={<EventInfo />} />
-                <Route path="/new" element={<EventForm />} />
+                <Route path="/" element={<MainLayout />}>
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/event/:id" element={<EventInfo />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<SignUp />} />
+                  <Route path="secure/*" element={<SecureLayout />}>
+                    <Route path="/new" element={<EventForm />} />
+                    <Route path="/logout" element={<LogOut />} />
+                  </Route>
+                </Route>
               </Routes>
-            </div>
           </EventContextProvider>
-      </div>
+        </AuthProvider>
+      </Router>
     );
   }
 

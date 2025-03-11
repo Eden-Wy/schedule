@@ -1,6 +1,6 @@
 import React from "react";
-import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
+
 
 
 function SignUp() {
@@ -31,13 +31,6 @@ function SignUp() {
             type="password"
             value={user.password}
             onChange={(e) => setEvent({ ...user, password: e.target.value })}
-          />
-            <input
-            className="p-2 border border-xl border-amber-300"
-            placeholder="Repeat your password"
-            type="password"
-            value={user.password2}
-            onChange={(e) => setEvent({ ...user, password2: e.target.value })}
           />
           <button
             type="submit"
