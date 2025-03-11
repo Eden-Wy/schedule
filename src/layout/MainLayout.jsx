@@ -1,12 +1,10 @@
 import Navigation from "../components/Navigation";
-import { Outlet, useNavigate } from "react-router-dom";
-import { useEvent } from "../context/EventContext";
+import Home from "../pages/Home";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 
 function MainLayout() {
   const { checkAuth, token, isAuth } = useAuth();
-  const navigate = useNavigate();
   useEffect(() => {
     checkAuth(token);
   }, [token]);
@@ -15,7 +13,7 @@ function MainLayout() {
   return (
     <>
       <Navigation />
-        <Outlet />
+        <Home />
     </>
   );
 };
