@@ -34,4 +34,5 @@ import { EventContextProvider } from "./context/EventContext";
     );
   }
 
-export default App;
+  export default App;
+
