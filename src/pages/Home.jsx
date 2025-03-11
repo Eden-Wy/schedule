@@ -9,11 +9,16 @@ import EventList from "../components/EventList";
 function Home() {
   const { isModalOpen } = useContext(EventContext);
   return (
-    <div>
+    <div className="bg-[#D9ACF1]">
       <div className="home w-full min-h-[100vh] flex flex-col items-center gap-[10rem] bg-[#D9ACF1]">
         <EventList />
         {isModalOpen && <EventInfo />}
       </div>
+      {/*
+      <div>
+      <EventForm />
+      </div>
+      */}
     </div>
   );
 }

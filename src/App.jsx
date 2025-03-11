@@ -18,7 +18,7 @@ import { EventContextProvider } from "./context/EventContext";
           <EventContextProvider>
               <Routes>
                 <Route path="/" element={<MainLayout />}>
-                  <Route path="/home" element={<Home />} />
+                  <Route index element={<Home />} />
                   <Route path="/event/:id" element={<EventInfo />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/signup" element={<SignUp />} />
