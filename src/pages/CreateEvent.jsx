@@ -5,33 +5,33 @@ import { useContext } from "react";
 function EventForm() {
   const { event, setEvent, handleSubmit } = useContext(EventContext);
   return (
-    <div className="event-form-container w-[50%] bg-red-500">
-      <h1 className="event-form-title m-[3rem] text-2xl text-center text-amber-500">ACCESS CATALOGUE</h1>
+    <div className="event-form-container w-[50%] ml-[25%] mt-[2rem] mb-[2rem] bg-linear-65 from-purple-500 to-pink-500 rounded-lg">
+      <h1 className="event-form-title mt-[2rem] pt-[1rem] text-2xl text-center text-[#471660]">Create a new Event!</h1>
       <form
         onSubmit={handleSubmit}
-        className="event-form w-[100%] flex flex-col gap-4 "
+        className="event-form w-[100%] p-[3rem] flex flex-col gap-4 "
       >
         <input
-          className="p-2 border border-xl border-amber-300"
+          className="p-2 m-2 py-1 px-3 text-[#471660] bg-[#D891D2] shadow-lg rounded-lg tracking-wide"
           type="text"
-          placeholder="Title"
+          placeholder="Event Name"
           value={event.title}
           onChange={(e) => setEvent({ ...event, title: e.target.value })}
         />
         <textarea
-          className="p-2 border border-xl border-amber-300"
-          placeholder="Content"
+          className="p-2 m-2 py-1 px-3 text-[#471660] bg-[#D891D2] shadow-lg rounded-lg tracking-wide"
+          placeholder="Event Description"
           value={event.content}
           onChange={(e) => setEvent({ ...event, content: e.target.value })}
         ></textarea>
         <input
-          className="p-2 border border-xl border-amber-300"
+          className="p-2 m-2 py-1 px-3 text-[#471660] bg-[#D891D2] shadow-lg rounded-lg tracking-wide"
           type="date"
           value={event.date}
           onChange={(e) => setEvent({ ...event, date: e.target.value })}
         />
         <input
-          className="p-2 text-white border border-xl border-amber-300"
+          className="p-2 m-2 py-1 px-3 text-[#471660] bg-[#D891D2] shadow-lg rounded-lg tracking-wide"
           type="file"
           onChange={(e) => {
             if (e.target.files.length > 0) {
@@ -44,9 +44,9 @@ function EventForm() {
         />
         <button
           type="submit"
-          className="submit-button text-black w-[8rem] h-[2.5rem] rounded m-auto bg-amber-300 cursor-pointer"
+          className="submit-button w-[8rem] h-[2.5rem] rounded m-auto text-[#471660] bg-[#D891D2] shadow-lg rounded-lg tracking-wide cursor-pointer"
         >
-          Submit
+          Create Event
         </button>
       </form>
     </div>

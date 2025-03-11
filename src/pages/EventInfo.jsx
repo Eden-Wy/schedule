@@ -14,12 +14,12 @@ function EventInfo() {
 
   return (
     <div>
-      <div className="bg-[#D9ACF1] flex justify-center text-[#471660] w-full h-[100%]">
-        <div className="event-modal-content p-4 w-full h-full">
-          <h2>{event.title}</h2>
+      <div className="bg-red-500 flex justify-center text-[#471660] w-full h-[100%]">
+        <div className="event-modal-content p-4 w-full h-full justify-center ml-[25%] mr-[25%] p-[3rem]">
+          <h2 className="text-2xl pb-[2rem]">{event.title}</h2>
           <p>{event.content}</p>
           <p>{event.date}</p>
-          <img src={event.image} alt={event.title} className="w-[80%]" />
+          <img src={event.image} alt={event.title} className="min-w-[40%] justify-center p-[3rem]" />
           <button
             className="top-5 right-5 py-1 px-3 bg-[#D891D2] shadow-lg rounded-lg tracking-wide text-[#471660]"
             onClick={() => navigate("/")}
