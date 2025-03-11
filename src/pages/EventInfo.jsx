@@ -13,19 +13,31 @@ function EventInfo() {
   if (!event) return <p>Event not found!</p>;
 
   return (
-    <div>
-      <div className="bg-[#D9ACF1] flex justify-center text-[#471660] w-full h-[100%]">
-        <div className="event-modal-content p-4 w-full h-full">
-          <h2>{event.title}</h2>
-          <p>{event.content}</p>
-          <p>{event.date}</p>
-          <img src={event.image} alt={event.title} className="w-[80%]" />
-          <button
-            className="top-5 right-5 py-1 px-3 bg-[#D891D2] shadow-lg rounded-lg tracking-wide text-[#471660]"
-            onClick={() => navigate("/")}
-          >
-            Close
-          </button>
+    <div className="bg-[#D9ACF1] min-h-[80vh]">
+      <div className="bg-[#D9BCF1] text-[#471660] mx-[20%] py-5 shadow-lg">
+        <div className="event-content w-full">
+          <div className="bg-[#AD7EC5] h-15 flex-grow">
+            <div>
+              <h2 className="text-xl text-white text-center pt-1 text-wrap">{event.title}</h2>
+            </div>
+            <div>
+              <p className="text-end pr-2 text-sm">{event.date}</p>
+            </div>
+          </div>
+          <div className="p-5 px-10">
+            <p className="text-justify text-wrap indent-5">{event.content}</p>
+          </div>
+          <div className="flex flex-row justify-center">
+            <img src={event.image} alt={event.title} className="max-w-[80%] max-h-[80%]" />
+          </div>
+          <div className="flex flex-row justify-center">
+            <button
+              className="py-1 px-3 mt-5 bg-[#D891D2] shadow-md rounded-lg tracking-wide text-[#471660] hover:bg-[#AD7EC5]"
+              onClick={() => navigate("/")}
+            >
+              Close
+            </button>
+          </div>
         </div>
       </div>
   </div>

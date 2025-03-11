@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function Navigation() {
     return (
-        <nav className="navbar bg-linear-65 from-purple-500 to-pink-500 h-40 shadow-md">
+        <nav className="navbar bg-linear-65 from-purple-500 to-pink-500 h-[20vh] shadow-md">
             <ul className="navbar-center flex justify-center gap-10 w-full">
                 <li className="button m-2 py-1 px-3 bg-[#D891D2] shadow-lg rounded-lg tracking-wide uppercase">
                 <NavLink to="/" style={({isActive}) => isActive ? {color: "#471660"} : {color: "white"}}>
