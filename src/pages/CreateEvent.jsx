@@ -5,7 +5,7 @@ import { useContext } from "react";
 function EventForm() {
   const { event, setEvent, handleSubmit } = useContext(EventContext);
   return (
-    <div className="event-form-container w-[50%]">
+    <div className="event-form-container w-[50%] bg-red-500">
       <h1 className="event-form-title m-[3rem] text-2xl text-center text-amber-500">ACCESS CATALOGUE</h1>
       <form
         onSubmit={handleSubmit}
@@ -54,3 +54,5 @@ function EventForm() {
 }
 
 export default EventForm;
+
+//localStorage.setItem("Name", JSON.stringify(andererName)) - gehört nach EventContext.jsx
