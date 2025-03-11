@@ -9,10 +9,10 @@ import EventForm from "./pages/CreateEvent";
 
   function App() {
     return (
-      <div>
+      <div className="">
       <Navigation />
           <EventContextProvider>
-            <div>
+            <div className="">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/event/:id" element={<EventInfo />} />

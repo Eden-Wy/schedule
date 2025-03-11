@@ -20,7 +20,7 @@ const EventContextProvider = ({ children }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!event.title || !event.content) return alert("Please fill the form");
+    if (!event.title || !event.content || !event.date) return alert("Please fill the form");
     setEvents([{ ...event, id: Date.now() }, ...events]);
     setEvent({ title: "", content: "", date: "", image: "" });
     localStorage.setItem(
