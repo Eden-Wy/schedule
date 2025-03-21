@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 
 export const UserContext = createContext()
-const useUser = () => useContext(UserContext); // optional
+export const useUser = () => useContext(UserContext); // optional
 
 export const UserContextProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
@@ -45,4 +45,3 @@ export const UserContextProvider = ({ children }) => {
         </UserContext.Provider>
     );
 }
-export default useUser;

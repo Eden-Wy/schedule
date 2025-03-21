@@ -24,7 +24,7 @@ function Login() {
     });
   };
 
-  if (isAuth) navigate("/secure/dashboard");
+  if (isAuth) navigate("/");
   return (
     <div className="bg-[#D9ACF1] min-h-[80vh] pt-[2rem]">
       <div className="entry-form-container ml-[25%] w-[50%]">
@@ -34,7 +34,7 @@ function Login() {
         >
           <div className="p-2 m-2 py-1 px-3 bg-[#D891D2] shadow-md rounded-lg text-[#471660] hover:bg-[#AD7EC5] tracking-wide"
           >
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email: </label>
             <input
               onChange={handleChange}
               value={user.email}
@@ -45,7 +45,7 @@ function Login() {
           </div>
           <div className="p-2 m-2 py-1 px-3 bg-[#D891D2] shadow-md rounded-lg text-[#471660] hover:bg-[#AD7EC5] tracking-wide"
           >
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Password: </label>
             <input
               onChange={handleChange}
               value={user.password}

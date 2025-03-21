@@ -21,7 +21,7 @@ function Navigation() {
                 Create Event
                 </NavLink></li>
                 <li className="button m-2 py-1 px-3 bg-[#D891D2] shadow-lg rounded-lg tracking-wide uppercase">
-                <NavLink to="/logout" style={({isActive}) => isActive ? {color: "#471660"} : {color: "white"}}>
+                <NavLink to="/secure/logout" style={({isActive}) => isActive ? {color: "#471660"} : {color: "white"}}>
                 Log Out
                 </NavLink></li>
             </ul>

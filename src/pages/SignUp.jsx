@@ -36,7 +36,7 @@ function SignUp() {
           />
           <button
             type="submit"
-            className="submit-button submit-button w-[8rem] h-[2.5rem] rounded m-auto bg-[#D891D2] shadow-md rounded-lg tracking-wide text-[#471660] hover:bg-[#AD7EC5]-lg tracking-wide cursor-pointer"
+            className="submit-button w-[8rem] h-[2.5rem] rounded m-auto bg-[#D891D2] shadow-md rounded-lg tracking-wide text-[#471660] hover:bg-[#AD7EC5]-lg tracking-wide cursor-pointer"
           >
             Submit
           </button>
