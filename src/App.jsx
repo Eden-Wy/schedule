@@ -8,31 +8,34 @@ import LogOut from "./components/LogOut";
 import EventInfo from "./pages/EventInfo";
 import EventForm from "./pages/CreateEvent";
 import SecureLayout from "./layout/SecureLayout";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthContextProvider } from "./context/AuthContext";
+import { UserContextProvider } from "./context/UserContext";
 import { EventContextProvider } from "./context/EventContext";
 
-  function App() {
-    return (
-      <Router>
-        <AuthProvider>
+function App() {
+  return (
+    <Router>
+      <AuthContextProvider>
+        <UserContextProvider>
           <EventContextProvider>
-              <Routes>
-                <Route path="/" element={<MainLayout />}>
-                  <Route index element={<Home />} />
-                  <Route path="/event/:id" element={<EventInfo />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/signup" element={<SignUp />} />
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route index element={<Home />} />
+                <Route path="/event/:id" element={<EventInfo />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
                 <Route path="/secure" element={<SecureLayout />}>
-                    <Route path="secure/new" element={<EventForm />} />
-                    <Route path="secure/logout" element={<LogOut />} />
-                  </Route>
+                  <Route path="secure/new" element={<EventForm />} />
+                  <Route path="secure/logout" element={<LogOut />} />
                 </Route>
-              </Routes>
+              </Route>
+            </Routes>
           </EventContextProvider>
-        </AuthProvider>
-      </Router>
-    );
-  }
+        </UserContextProvider>
+      </AuthContextProvider>
+    </Router>
+  );
+}
 
-  export default App;
+export default App;
 

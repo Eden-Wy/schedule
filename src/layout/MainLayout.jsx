@@ -2,6 +2,7 @@ import Navigation from "../components/Navigation";
 import Home from "../pages/Home";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
+import { Outlet} from 'react-router-dom';
 
 function MainLayout() {
   const { checkAuth, token, isAuth } = useAuth();
@@ -13,7 +14,7 @@ function MainLayout() {
   return (
     <>
       <Navigation />
-        <Home />
+        <Outlet />
     </>
   );
 };

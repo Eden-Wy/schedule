@@ -4,7 +4,7 @@ const AuthContext = createContext();
 
 const useAuth = () => useContext(AuthContext); // optional
 
-const AuthProvider = ({ children }) => {
+const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -45,4 +45,4 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-export { AuthProvider, useAuth };
+export { AuthContextProvider, useAuth };

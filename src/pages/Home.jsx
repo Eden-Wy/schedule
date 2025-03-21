@@ -1,5 +1,4 @@
 import React from "react";
-import EventForm from "./CreateEvent";
 import { EventContext } from "../context/EventContext";
 import { useContext } from "react";
 import EventInfo from "./EventInfo";
