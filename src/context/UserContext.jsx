@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom"
 export const UserContext = createContext()
 const useUser = () => useContext(UserContext); // optional
 
-const UserContextProvider = ({ children }) => {
+export const UserContextProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState({
         userName: "",
         email: "",
         password: "",
-        password2: "",
+        
     })
     const navigate = useNavigate()
     useEffect(() => {
@@ -20,9 +20,9 @@ const UserContextProvider = ({ children }) => {
     }, [])
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!user.userName || !user.email || !user.password || !user.password2) return alert("Please fill in all the fields.");
+        if (!user.userName || !user.email || !user.password) return alert("Please fill in all the fields.");
         // setEvents([{ ...event, id: Date.now() }, ...events]);
-        setUser({ userName: "", email: "", password: "", password2: "" });
+        setUser({ userName: "", email: "", password: ""});
         localStorage.setItem(
             "users",
             JSON.stringify([...users, { ...user, id: Date.now() }])
@@ -45,4 +45,4 @@ const UserContextProvider = ({ children }) => {
         </UserContext.Provider>
     );
 }
-export default { UserContextProvider, useUser };
+export default useUser;
