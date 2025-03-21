@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 export const EventContext = createContext();
 
+const useEvent = () => useContext(EventContext); // optional
+
 const EventContextProvider = ({ children }) => {
   const [events, setEvents] = useState([]);
   const [event, setEvent] = useState({
@@ -57,4 +59,4 @@ const EventContextProvider = ({ children }) => {
   );
 };
 
-export default EventContextProvider;
+export { EventContextProvider , useEvent};
